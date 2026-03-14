@@ -30,6 +30,7 @@ justify-content:space-between;
 align-items:center;
 padding:18px 80px;
 background:#1e293b;
+position:relative;
 }
 
 nav h2{
@@ -102,6 +103,8 @@ line-height:1.7;
 margin-bottom:25px;
 color:#475569;
 }
+
+/* BUTTON */
 
 .btn{
 display:inline-block;
@@ -193,24 +196,24 @@ display:block;
 }
 
 nav ul{
-position:fixed;
-top:0;
-right:-250px;
-height:100%;
-width:220px;
+position:absolute;
+top:60px;
+left:0;
+width:100%;
 background:#1e293b;
 flex-direction:column;
-padding-top:80px;
-transition:0.4s;
-}
-
-nav ul li{
-margin:20px 0;
 text-align:center;
+max-height:0;
+overflow:hidden;
+transition:0.3s;
 }
 
 nav ul.show{
-right:0;
+max-height:300px;
+}
+
+nav ul li{
+margin:15px 0;
 }
 
 .hero{
@@ -221,6 +224,10 @@ padding:60px 30px;
 
 .hero-img{
 margin-bottom:30px;
+}
+
+.hero-img img{
+width:220px;
 }
 
 }
@@ -339,4 +346,3 @@ type();
 
 </body>
 </html>
-

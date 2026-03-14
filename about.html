@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -51,6 +50,65 @@ transition:.3s;
 
 nav ul li a:hover{
 color:#38bdf8;
+}
+
+/* BURGER */
+
+.menu-icon{
+display:none;
+font-size:22px;
+color:white;
+cursor:pointer;
+}
+
+/* SIDEBAR */
+
+.sidebar{
+position:fixed;
+top:0;
+right:-260px;
+width:260px;
+height:100%;
+background:#020617;
+padding-top:80px;
+transition:0.4s;
+z-index:1000;
+}
+
+.sidebar ul{
+list-style:none;
+text-align:center;
+}
+
+.sidebar ul li{
+margin:25px 0;
+}
+
+.sidebar ul li a{
+color:white;
+font-size:18px;
+text-decoration:none;
+}
+
+.sidebar.active{
+right:0;
+}
+
+/* OVERLAY */
+
+.overlay{
+position:fixed;
+top:0;
+left:0;
+width:100%;
+height:100%;
+background:rgba(0,0,0,0.4);
+display:none;
+z-index:999;
+}
+
+.overlay.show{
+display:block;
 }
 
 /* MAIN CONTAINER */
@@ -109,7 +167,7 @@ color:#2563eb;
 margin-bottom:10px;
 }
 
-/* EDUCATION CARDS */
+/* EDUCATION */
 
 .education-grid{
 display:grid;
@@ -141,11 +199,7 @@ color:#3b82f6;
 font-size:14px;
 }
 
-/* EXPERIENCE STYLE */
-
-.exp-list{
-margin-top:20px;
-}
+/* EXPERIENCE */
 
 .exp-card{
 background:white;
@@ -163,7 +217,6 @@ transform:translateX(6px);
 
 .exp-card h3{
 color:#020617;
-margin-bottom:5px;
 }
 
 .exp-card span{
@@ -194,6 +247,14 @@ nav{
 padding:20px 30px;
 }
 
+nav ul{
+display:none;
+}
+
+.menu-icon{
+display:block;
+}
+
 }
 
 </style>
@@ -212,7 +273,26 @@ padding:20px 30px;
 <li><a href="contact.html">Contact</a></li>
 </ul>
 
+<div class="menu-icon" onclick="openMenu()">
+☰
+</div>
+
 </nav>
+
+<!-- SIDEBAR -->
+
+<div class="sidebar" id="sidebar">
+
+<ul>
+<li><a href="index.html" onclick="closeMenu()">Home</a></li>
+<li><a href="about.html" onclick="closeMenu()">About</a></li>
+<li><a href="projects.html" onclick="closeMenu()">Projects</a></li>
+<li><a href="contact.html" onclick="closeMenu()">Contact</a></li>
+</ul>
+
+</div>
+
+<div class="overlay" id="overlay" onclick="closeMenu()"></div>
 
 
 <div class="container">
@@ -226,7 +306,6 @@ I enjoy developing efficient, scalable, and user-friendly systems that solve rea
 
 I continuously improve my programming skills and explore modern technologies to grow as a professional developer.
 </p>
-
 
 <h2 class="section-title">Technical Skills</h2>
 
@@ -317,8 +396,6 @@ I continuously improve my programming skills and explore modern technologies to 
 
 <h2 class="section-title">Professional Experience</h2>
 
-<div class="exp-list">
-
 <div class="exp-card">
 <h3>Python Developer</h3>
 <span>Retech Solutions Pvt Ltd • Chennai</span><br>
@@ -353,12 +430,25 @@ I continuously improve my programming skills and explore modern technologies to 
 
 </div>
 
-</div>
-
 
 <footer>
 © 2026 Algets
 </footer>
+
+
+<script>
+
+function openMenu(){
+document.getElementById("sidebar").classList.add("active");
+document.getElementById("overlay").classList.add("show");
+}
+
+function closeMenu(){
+document.getElementById("sidebar").classList.remove("active");
+document.getElementById("overlay").classList.remove("show");
+}
+
+</script>
 
 </body>
 </html>

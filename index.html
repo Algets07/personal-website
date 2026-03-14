@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -6,7 +5,6 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Algets S | Portfolio</title>
 
-<!-- ICON LIBRARY -->
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 
 <style>
@@ -18,8 +16,6 @@ box-sizing:border-box;
 font-family:'Segoe UI', sans-serif;
 scroll-behavior:smooth;
 }
-
-/* BODY */
 
 body{
 background:#f4f6fb;
@@ -60,6 +56,15 @@ nav ul li a:hover{
 color:#3b82f6;
 }
 
+/* BURGER ICON */
+
+.menu-icon{
+display:none;
+font-size:22px;
+color:white;
+cursor:pointer;
+}
+
 /* HERO */
 
 .hero{
@@ -98,8 +103,6 @@ margin-bottom:25px;
 color:#475569;
 }
 
-/* BUTTON */
-
 .btn{
 display:inline-block;
 padding:11px 22px;
@@ -121,7 +124,6 @@ transform:translateY(-2px);
 
 .hero-img img{
 width:300px;
-/* height:300px; */
 object-fit:cover;
 border-radius:12px;
 box-shadow:0 15px 35px rgba(0,0,0,0.2);
@@ -178,12 +180,37 @@ transform:translateY(0);
 }
 }
 
-/* MOBILE */
+/* MOBILE MENU */
 
 @media(max-width:900px){
 
 nav{
-padding:18px 30px;
+padding:18px 25px;
+}
+
+.menu-icon{
+display:block;
+}
+
+nav ul{
+position:fixed;
+top:0;
+right:-250px;
+height:100%;
+width:220px;
+background:#1e293b;
+flex-direction:column;
+padding-top:80px;
+transition:0.4s;
+}
+
+nav ul li{
+margin:20px 0;
+text-align:center;
+}
+
+nav ul.show{
+right:0;
 }
 
 .hero{
@@ -204,15 +231,22 @@ margin-bottom:30px;
 <body>
 
 <nav>
+
 <h2>Algets</h2>
 
-<ul>
+<div class="menu-icon" onclick="toggleMenu()">
+<i class="fa-solid fa-bars"></i>
+</div>
+
+<ul id="nav-links">
 <li><a href="index.html">Home</a></li>
 <li><a href="about.html">About</a></li>
 <li><a href="projects.html">Projects</a></li>
 <li><a href="contact.html">Contact</a></li>
 </ul>
+
 </nav>
+
 
 <section class="hero">
 
@@ -223,7 +257,7 @@ margin-bottom:30px;
 <h2><span id="typing"></span></h2>
 
 <p>
- Software Engineer passionate about building scalable web applications using Django and modern web technologies.
+Software Engineer passionate about building scalable web applications using Django and modern web technologies.
 I enjoy solving real-world problems and continuously improving my programming skills.
 </p>
 
@@ -238,9 +272,10 @@ I enjoy solving real-world problems and continuously improving my programming sk
 
 </section>
 
+
 <footer>
 
-<p>© 2026 Algets S </p>
+<p>© 2026 Algets S</p>
 
 <div class="footer-icons">
 
@@ -260,9 +295,16 @@ I enjoy solving real-world problems and continuously improving my programming sk
 
 </footer>
 
+
 <script>
 
-/* Typing Animation */
+/* MOBILE MENU */
+
+function toggleMenu(){
+document.getElementById("nav-links").classList.toggle("show");
+}
+
+/* TYPING ANIMATION */
 
 const text = ["Software Engineer"];
 let count = 0;
@@ -297,3 +339,4 @@ type();
 
 </body>
 </html>
+

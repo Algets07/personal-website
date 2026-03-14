@@ -1,0 +1,299 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Projects | Algets S</title>
+
+<style>
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:'Segoe UI', sans-serif;
+}
+
+body{
+background:#f4f6fb;
+color:#333;
+}
+
+/* NAVBAR */
+
+nav{
+display:flex;
+justify-content:space-between;
+align-items:center;
+padding:18px 80px;
+background:#1e293b;
+}
+
+nav h2{
+color:#f7f9fc;
+}
+
+nav ul{
+display:flex;
+list-style:none;
+}
+
+nav ul li{
+margin-left:25px;
+}
+
+nav ul li a{
+text-decoration:none;
+color:#e5e7eb;
+font-size:15px;
+transition:.3s;
+}
+
+nav ul li a:hover{
+color:#3b82f6;
+}
+
+/* PROJECT SECTION */
+
+.projects{
+padding:70px 80px;
+max-width:1200px;
+margin:auto;
+}
+
+.projects h1{
+font-size:40px;
+margin-bottom:40px;
+color:#1e293b;
+text-align:center;
+}
+
+/* GRID */
+
+.project-grid{
+display:grid;
+grid-template-columns:1fr 1fr;
+gap:30px;
+}
+
+/* PROJECT CARD */
+
+.project-card{
+background:white;
+padding:25px;
+border-radius:8px;
+box-shadow:0 6px 20px rgba(0,0,0,0.08);
+transition:.3s;
+}
+
+.project-card:hover{
+transform:translateY(-6px);
+}
+
+.project-card h3{
+color:#1e293b;
+margin-bottom:10px;
+}
+
+.project-card span{
+color:#64748b;
+font-size:14px;
+}
+
+.project-card p{
+margin-top:10px;
+line-height:1.6;
+color:#475569;
+}
+
+/* TECH BADGES */
+
+.tech{
+margin-top:15px;
+}
+
+.tech span{
+display:inline-block;
+background:#e0e7ff;
+color:#3730a3;
+padding:5px 10px;
+margin:4px;
+border-radius:4px;
+font-size:12px;
+}
+
+/* BUTTON */
+
+.project-btn{
+display:inline-block;
+margin-top:15px;
+padding:10px 18px;
+background:#3b82f6;
+color:white;
+text-decoration:none;
+border-radius:5px;
+font-size:14px;
+transition:.3s;
+}
+
+.project-btn:hover{
+background:#2563eb;
+}
+
+/* FOOTER */
+
+footer{
+text-align:center;
+padding:20px;
+background:#1e293b;
+color:#cbd5f5;
+margin-top:60px;
+}
+
+/* MOBILE */
+
+@media(max-width:900px){
+
+nav{
+padding:18px 30px;
+}
+
+.projects{
+padding:50px 30px;
+}
+
+.project-grid{
+grid-template-columns:1fr;
+}
+
+}
+
+</style>
+</head>
+
+<body>
+
+<nav>
+
+<h2>Algets</h2>
+
+<ul>
+<li><a href="index.html">Home</a></li>
+<li><a href="about.html">About</a></li>
+<li><a href="projects.html">Projects</a></li>
+<li><a href="contact.html">Contact</a></li>
+</ul>
+
+</nav>
+
+
+<section class="projects">
+
+<h1>My Projects</h1>
+
+<div class="project-grid">
+
+
+<div class="project-card">
+
+<h3>AI-Driven Criminal Identification System</h3>
+
+<span>03/2025 – 05/2025</span>
+
+<p>
+Developed a real-time facial recognition system using deep learning techniques to assist law enforcement.
+The system follows the complete SDLC process from requirement analysis to testing and integrates
+a database for rapid and accurate criminal identification.
+</p>
+
+<div class="tech">
+<span>Python</span>
+<span>Deep Learning</span>
+<span>Face Recognition</span>
+<span>OpenCV</span>
+<span>Database</span>
+</div>
+
+<a href="https://github.com/Algets07" class="project-btn" target="_blank">View Code</a>
+
+</div>
+
+
+<div class="project-card">
+
+<h3>AI-Powered Career Guidance Platform</h3>
+
+<p>
+Built a Django-based full-stack web application that provides AI-powered career recommendations.
+The system includes chatbot assistance, career prediction logic, and automated PDF report generation.
+Designed using modular architecture for maintainability.
+</p>
+
+<div class="tech">
+<span>Django</span>
+<span>Python</span>
+<span>AI Logic</span>
+<span>Chatbot</span>
+<span>PDF Reports</span>
+</div>
+
+<a href="https://github.com/Algets07" class="project-btn" target="_blank">View Code</a>
+
+</div>
+
+
+<div class="project-card">
+
+<h3>Farm Management System</h3>
+
+<p>
+A Django-based web system for managing farm records, seasonal crop planning,
+and agricultural monitoring to improve farm productivity.
+</p>
+
+<div class="tech">
+<span>Django</span>
+<span>Python</span>
+<span>SQLite</span>
+<span>Bootstrap</span>
+</div>
+
+<a href="https://github.com/Algets07" class="project-btn" target="_blank">View Code</a>
+
+</div>
+
+
+<div class="project-card">
+
+<h3>Online Movie Ticket Booking System</h3>
+
+<p>
+Developed an online platform for selecting movie showtimes, managing seat availability,
+and booking movie tickets with confirmation.
+</p>
+
+<div class="tech">
+<span>Django</span>
+<span>Python</span>
+<span>HTML</span>
+<span>CSS</span>
+<span>JavaScript</span>
+</div>
+
+<a href="https://github.com/Algets07" class="project-btn" target="_blank">View Code</a>
+
+</div>
+
+
+</div>
+
+</section>
+
+
+<footer>
+© 2026 Algets S 
+</footer>
+
+</body>
+</html>

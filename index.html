@@ -1,0 +1,299 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Algets S | Portfolio</title>
+
+<!-- ICON LIBRARY -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+<style>
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:'Segoe UI', sans-serif;
+scroll-behavior:smooth;
+}
+
+/* BODY */
+
+body{
+background:#f4f6fb;
+color:#333;
+}
+
+/* NAVBAR */
+
+nav{
+display:flex;
+justify-content:space-between;
+align-items:center;
+padding:18px 80px;
+background:#1e293b;
+}
+
+nav h2{
+color:#eff0f2;
+}
+
+nav ul{
+display:flex;
+list-style:none;
+}
+
+nav ul li{
+margin-left:25px;
+}
+
+nav ul li a{
+text-decoration:none;
+color:#e5e7eb;
+font-size:15px;
+transition:.3s;
+}
+
+nav ul li a:hover{
+color:#3b82f6;
+}
+
+/* HERO */
+
+.hero{
+min-height:85vh;
+display:flex;
+align-items:center;
+justify-content:space-between;
+padding:80px;
+flex-wrap:wrap;
+}
+
+.hero-text{
+max-width:520px;
+animation:fadeIn 1s ease;
+}
+
+.hero-text h1{
+font-size:44px;
+margin-bottom:10px;
+color:#1e293b;
+}
+
+.hero-text span{
+color:#3b82f6;
+}
+
+.hero-text h2{
+font-size:22px;
+margin-bottom:20px;
+color:#64748b;
+}
+
+.hero-text p{
+line-height:1.7;
+margin-bottom:25px;
+color:#475569;
+}
+
+/* BUTTON */
+
+.btn{
+display:inline-block;
+padding:11px 22px;
+background:#3b82f6;
+color:white;
+border-radius:5px;
+text-decoration:none;
+margin-right:10px;
+font-size:14px;
+transition:.3s;
+}
+
+.btn:hover{
+background:#2563eb;
+transform:translateY(-2px);
+}
+
+/* PROFILE IMAGE */
+
+.hero-img img{
+width:300px;
+/* height:300px; */
+object-fit:cover;
+border-radius:12px;
+box-shadow:0 15px 35px rgba(0,0,0,0.2);
+transition:.3s;
+animation:float 4s ease-in-out infinite;
+}
+
+.hero-img img:hover{
+transform:scale(1.05);
+}
+
+/* FOOTER */
+
+footer{
+text-align:center;
+padding:25px;
+background:#1e293b;
+color:#cbd5f5;
+font-size:14px;
+}
+
+.footer-icons{
+margin-top:10px;
+}
+
+.footer-icons a{
+margin:0 10px;
+color:#cbd5f5;
+font-size:20px;
+transition:.3s;
+}
+
+.footer-icons a:hover{
+color:#3b82f6;
+transform:scale(1.2);
+}
+
+/* ANIMATIONS */
+
+@keyframes float{
+0%{transform:translateY(0)}
+50%{transform:translateY(-10px)}
+100%{transform:translateY(0)}
+}
+
+@keyframes fadeIn{
+from{
+opacity:0;
+transform:translateY(30px);
+}
+to{
+opacity:1;
+transform:translateY(0);
+}
+}
+
+/* MOBILE */
+
+@media(max-width:900px){
+
+nav{
+padding:18px 30px;
+}
+
+.hero{
+flex-direction:column-reverse;
+text-align:center;
+padding:60px 30px;
+}
+
+.hero-img{
+margin-bottom:30px;
+}
+
+}
+
+</style>
+</head>
+
+<body>
+
+<nav>
+<h2>Algets</h2>
+
+<ul>
+<li><a href="index.html">Home</a></li>
+<li><a href="about.html">About</a></li>
+<li><a href="projects.html">Projects</a></li>
+<li><a href="contact.html">Contact</a></li>
+</ul>
+</nav>
+
+<section class="hero">
+
+<div class="hero-text">
+
+<h1>Hello I'm <span>Algets S</span></h1>
+
+<h2><span id="typing"></span></h2>
+
+<p>
+ Software Engineer passionate about building scalable web applications using Django and modern web technologies.
+I enjoy solving real-world problems and continuously improving my programming skills.
+</p>
+
+<a href="projects.html" class="btn">View Projects</a>
+<a href="Algets resume.pdf" class="btn">Resume</a>
+
+</div>
+
+<div class="hero-img">
+<img src="R1.jpg" alt="profile">
+</div>
+
+</section>
+
+<footer>
+
+<p>© 2026 Algets S </p>
+
+<div class="footer-icons">
+
+<a href="mailto:algetes2004@gmail.com">
+<i class="fa-solid fa-envelope"></i>
+</a>
+
+<a href="https://github.com/Algets07" target="_blank">
+<i class="fa-brands fa-github"></i>
+</a>
+
+<a href="https://www.linkedin.com/in/algets-s-4b6762304/" target="_blank">
+<i class="fa-brands fa-linkedin"></i>
+</a>
+
+</div>
+
+</footer>
+
+<script>
+
+/* Typing Animation */
+
+const text = ["Software Engineer"];
+let count = 0;
+let index = 0;
+let currentText = "";
+let letter = "";
+
+function type(){
+
+if(count === text.length){
+count = 0;
+}
+
+currentText = text[count];
+letter = currentText.slice(0, ++index);
+
+document.getElementById("typing").textContent = letter;
+
+if(letter.length === currentText.length){
+count++;
+index = 0;
+setTimeout(type,1200);
+}else{
+setTimeout(type,80);
+}
+
+}
+
+type();
+
+</script>
+
+</body>
+</html>
